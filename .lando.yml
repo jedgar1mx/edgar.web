@@ -1,0 +1,8 @@
+name: jedgar1mx
+recipe: drupal9
+config:
+  php: '7.4'
+  composer_version: '2.1.9'
+  via: nginx
+  webroot: docroot
+  database: postgres
