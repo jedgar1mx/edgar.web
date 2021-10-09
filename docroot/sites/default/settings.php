@@ -802,14 +802,13 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
-$databases['default']['default'] = array (
-  'database' => 'drupal9',
-  'username' => 'postgres',
-  'password' => '',
-  'prefix' => '',
-  'host' => 'database',
-  'port' => '5432',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
-  'driver' => 'pgsql',
-);
+if (file_exists($app_root . '/' . $site_path . '/settings/local.settings.php')) {
+  include $app_root . '/' . $site_path . '/settings/local.settings.php';
+}else{
+  // if (file_exists('/var/www/site-php')) {
+  //   require '/app/private/site-settings.inc';
+  // }
+  include '/app/private/site-settings.inc';
+}
+
 $settings['config_sync_directory'] = 'sites/default/files/config_Tk4VRPdNkT1fL85QKZEdVL1N5xmGZkicuMv67j_EVOSy9rMh05mMWlIyj4zTnIT1ABBhwSKdBw/sync';
